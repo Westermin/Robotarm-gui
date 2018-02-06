@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gp_Send = new System.Windows.Forms.GroupBox();
             this.txt_Send = new System.Windows.Forms.TextBox();
             this.gp_Receive = new System.Windows.Forms.GroupBox();
@@ -38,6 +39,10 @@
             this.cb_Ports = new System.Windows.Forms.ComboBox();
             this.lab_Ports = new System.Windows.Forms.Label();
             this.lab_Baudrate = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.gp_Send.SuspendLayout();
             this.gp_Receive.SuspendLayout();
             this.SuspendLayout();
@@ -132,11 +137,40 @@
             this.lab_Baudrate.TabIndex = 6;
             this.lab_Baudrate.Text = "Baudrate";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 135);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(78, 37);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(12, 92);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(78, 37);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(180, 108);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.WordWrap = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 454);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.lab_Baudrate);
             this.Controls.Add(this.lab_Ports);
             this.Controls.Add(this.cb_Baudrate);
@@ -168,6 +202,10 @@
         private System.Windows.Forms.ComboBox cb_Ports;
         private System.Windows.Forms.Label lab_Ports;
         private System.Windows.Forms.Label lab_Baudrate;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 
