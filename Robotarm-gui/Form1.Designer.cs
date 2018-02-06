@@ -39,10 +39,10 @@
             this.cb_Ports = new System.Windows.Forms.ComboBox();
             this.lab_Ports = new System.Windows.Forms.Label();
             this.lab_Baudrate = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_Stop = new System.Windows.Forms.Button();
+            this.btn_Start = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.txt_Status = new System.Windows.Forms.TextBox();
             this.gp_Send.SuspendLayout();
             this.gp_Receive.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             this.gp_Receive.Size = new System.Drawing.Size(206, 160);
             this.gp_Receive.TabIndex = 1;
             this.gp_Receive.TabStop = false;
-            this.gp_Receive.Text = "Send here";
+            this.gp_Receive.Text = "Recived here";
             // 
             // txt_Recieve
             // 
@@ -91,6 +91,7 @@
             this.btn_Send.TabIndex = 2;
             this.btn_Send.Text = "Send";
             this.btn_Send.UseVisualStyleBackColor = true;
+            this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
             // 
             // button1
             // 
@@ -118,6 +119,7 @@
             this.cb_Ports.Name = "cb_Ports";
             this.cb_Ports.Size = new System.Drawing.Size(121, 21);
             this.cb_Ports.TabIndex = 1;
+            this.cb_Ports.SelectedIndexChanged += new System.EventHandler(this.cb_Ports_SelectedIndexChanged);
             // 
             // lab_Ports
             // 
@@ -137,40 +139,46 @@
             this.lab_Baudrate.TabIndex = 6;
             this.lab_Baudrate.Text = "Baudrate";
             // 
-            // button2
+            // btn_Stop
             // 
-            this.button2.Location = new System.Drawing.Point(12, 135);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 37);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Stop.BackColor = System.Drawing.Color.Red;
+            this.btn_Stop.Location = new System.Drawing.Point(12, 135);
+            this.btn_Stop.Name = "btn_Stop";
+            this.btn_Stop.Size = new System.Drawing.Size(78, 37);
+            this.btn_Stop.TabIndex = 7;
+            this.btn_Stop.Text = "Stop";
+            this.btn_Stop.UseVisualStyleBackColor = false;
+            this.btn_Stop.Click += new System.EventHandler(this.btn_Stop_Click);
             // 
-            // button3
+            // btn_Start
             // 
-            this.button3.Location = new System.Drawing.Point(12, 92);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 37);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Start.BackColor = System.Drawing.Color.Green;
+            this.btn_Start.Location = new System.Drawing.Point(12, 92);
+            this.btn_Start.Name = "btn_Start";
+            this.btn_Start.Size = new System.Drawing.Size(78, 37);
+            this.btn_Start.TabIndex = 8;
+            this.btn_Start.Text = "Start";
+            this.btn_Start.UseVisualStyleBackColor = false;
+            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
-            // textBox1
+            // txt_Status
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.WordWrap = false;
+            this.txt_Status.BackColor = System.Drawing.Color.Gray;
+            this.txt_Status.Location = new System.Drawing.Point(199, 124);
+            this.txt_Status.Name = "txt_Status";
+            this.txt_Status.ReadOnly = true;
+            this.txt_Status.Size = new System.Drawing.Size(100, 20);
+            this.txt_Status.TabIndex = 9;
+            this.txt_Status.Text = "N/A";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 454);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(433, 402);
+            this.Controls.Add(this.txt_Status);
+            this.Controls.Add(this.btn_Start);
+            this.Controls.Add(this.btn_Stop);
             this.Controls.Add(this.lab_Baudrate);
             this.Controls.Add(this.lab_Ports);
             this.Controls.Add(this.cb_Baudrate);
@@ -180,7 +188,8 @@
             this.Controls.Add(this.gp_Receive);
             this.Controls.Add(this.gp_Send);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Robot Arm Control Panel";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gp_Send.ResumeLayout(false);
             this.gp_Send.PerformLayout();
             this.gp_Receive.ResumeLayout(false);
@@ -202,10 +211,10 @@
         private System.Windows.Forms.ComboBox cb_Ports;
         private System.Windows.Forms.Label lab_Ports;
         private System.Windows.Forms.Label lab_Baudrate;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_Stop;
+        private System.Windows.Forms.Button btn_Start;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.TextBox txt_Status;
     }
 }
 
