@@ -106,7 +106,7 @@
             // 
             this.cb_Baudrate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Baudrate.FormattingEnabled = true;
-            this.cb_Baudrate.Location = new System.Drawing.Point(169, 34);
+            this.cb_Baudrate.Location = new System.Drawing.Point(142, 34);
             this.cb_Baudrate.Name = "cb_Baudrate";
             this.cb_Baudrate.Size = new System.Drawing.Size(121, 21);
             this.cb_Baudrate.TabIndex = 4;
@@ -133,7 +133,7 @@
             // lab_Baudrate
             // 
             this.lab_Baudrate.AutoSize = true;
-            this.lab_Baudrate.Location = new System.Drawing.Point(166, 13);
+            this.lab_Baudrate.Location = new System.Drawing.Point(139, 13);
             this.lab_Baudrate.Name = "lab_Baudrate";
             this.lab_Baudrate.Size = new System.Drawing.Size(50, 13);
             this.lab_Baudrate.TabIndex = 6;
