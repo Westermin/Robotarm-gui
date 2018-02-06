@@ -16,6 +16,7 @@ namespace Robotarm_gui
         public Form1()
         {
             InitializeComponent();
+            getPorts();
         }
         void getPorts()
         {
