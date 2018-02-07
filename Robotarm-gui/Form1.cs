@@ -13,6 +13,7 @@ namespace Robotarm_gui
 {
     public partial class Form1 : Form
     {
+        bool toggle = true;
         public Form1()
         {
             InitializeComponent();
@@ -64,6 +65,36 @@ namespace Robotarm_gui
         private void txt_Recieve_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_PortSwitch_Click(object sender, EventArgs e)
+        {
+            if (toggle == true)
+            {
+                    if (cb_Ports.Text == "" || cb_Baudrate.Text == "")
+                    {
+                        txt_Recieve.Text = "Please select a valid Port and Baudrate.";
+                    }
+                    else
+                    {
+                        serialPort1.PortName = cb_Ports.Text;
+                        serialPort1.BaudRate = Convert.ToInt32(cb_Baudrate.Text);
+                        serialPort1.Open();
+                        txt_Recieve.Text = "Port opened!";
+                        btn_PortSwitch.BackColor = Color.Green;
+                        toggle = !toggle;
+                    }
+                
+            }
+            else
+                {
+                serialPort1.Close();
+                serialPort1.PortName = "0";
+                serialPort1.BaudRate = 1;
+                txt_Recieve.Text = "Port closed!";
+                btn_PortSwitch.BackColor = Color.Red;
+                toggle = !toggle;
+                }
         }
     }
 }

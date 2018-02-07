@@ -35,7 +35,7 @@
             this.gp_Receive = new System.Windows.Forms.GroupBox();
             this.txt_Recieve = new System.Windows.Forms.TextBox();
             this.btn_Send = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_PortSwitch = new System.Windows.Forms.Button();
             this.cb_Baudrate = new System.Windows.Forms.ComboBox();
             this.cb_Ports = new System.Windows.Forms.ComboBox();
             this.lab_Ports = new System.Windows.Forms.Label();
@@ -83,6 +83,7 @@
             this.txt_Recieve.Location = new System.Drawing.Point(3, 16);
             this.txt_Recieve.Multiline = true;
             this.txt_Recieve.Name = "txt_Recieve";
+            this.txt_Recieve.ReadOnly = true;
             this.txt_Recieve.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_Recieve.Size = new System.Drawing.Size(197, 138);
             this.txt_Recieve.TabIndex = 0;
@@ -98,19 +99,33 @@
             this.btn_Send.UseVisualStyleBackColor = true;
             this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
             // 
-            // button1
+            // btn_PortSwitch
             // 
-            this.button1.Location = new System.Drawing.Point(286, 149);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Open/Close Port";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_PortSwitch.Location = new System.Drawing.Point(286, 149);
+            this.btn_PortSwitch.Name = "btn_PortSwitch";
+            this.btn_PortSwitch.Size = new System.Drawing.Size(75, 36);
+            this.btn_PortSwitch.TabIndex = 3;
+            this.btn_PortSwitch.Text = "Open/Close Port";
+            this.btn_PortSwitch.UseVisualStyleBackColor = true;
+            this.btn_PortSwitch.Click += new System.EventHandler(this.btn_PortSwitch_Click);
             // 
             // cb_Baudrate
             // 
             this.cb_Baudrate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Baudrate.FormattingEnabled = true;
+            this.cb_Baudrate.Items.AddRange(new object[] {
+            "300",
+            "600",
+            "1200",
+            "2400",
+            "4800",
+            "9600",
+            "14400",
+            "19200",
+            "28800",
+            "38400",
+            "57600",
+            "115200"});
             this.cb_Baudrate.Location = new System.Drawing.Point(142, 34);
             this.cb_Baudrate.Name = "cb_Baudrate";
             this.cb_Baudrate.Size = new System.Drawing.Size(121, 21);
@@ -200,7 +215,7 @@
             this.Controls.Add(this.lab_Ports);
             this.Controls.Add(this.cb_Baudrate);
             this.Controls.Add(this.cb_Ports);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_PortSwitch);
             this.Controls.Add(this.btn_Send);
             this.Controls.Add(this.gp_Receive);
             this.Controls.Add(this.gp_Send);
@@ -224,7 +239,7 @@
         private System.Windows.Forms.GroupBox gp_Receive;
         private System.Windows.Forms.TextBox txt_Recieve;
         private System.Windows.Forms.Button btn_Send;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_PortSwitch;
         private System.Windows.Forms.ComboBox cb_Baudrate;
         private System.Windows.Forms.ComboBox cb_Ports;
         private System.Windows.Forms.Label lab_Ports;
