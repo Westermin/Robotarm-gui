@@ -89,8 +89,6 @@ namespace Robotarm_gui
             else
                 {
                 serialPort1.Close();
-                serialPort1.PortName = "0";
-                serialPort1.BaudRate = 1;
                 txt_Recieve.Text = "Port closed!";
                 btn_PortSwitch.BackColor = Color.Red;
                 toggle = !toggle;
