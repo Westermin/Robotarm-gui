@@ -82,7 +82,13 @@ namespace Robotarm_gui
                         serialPort1.Open();
                         txt_Recieve.Text = "Port opened!";
                         btn_PortSwitch.BackColor = Color.Green;
-                        toggle = !toggle;
+
+                        btn_Send.Enabled = true;
+                        btn_Clear.Enabled = true;
+                        txt_Send.Enabled = true;
+
+
+                    toggle = !toggle;
                     }
                 
             }
@@ -91,6 +97,9 @@ namespace Robotarm_gui
                 serialPort1.Close();
                 txt_Recieve.Text = "Port closed!";
                 btn_PortSwitch.BackColor = Color.Red;
+                btn_Send.Enabled = false;
+                btn_Clear.Enabled = false;
+                txt_Send.Enabled = false;
                 toggle = !toggle;
                 }
         }

@@ -61,6 +61,7 @@
             // 
             // txt_Send
             // 
+            this.txt_Send.Enabled = false;
             this.txt_Send.Location = new System.Drawing.Point(3, 16);
             this.txt_Send.Multiline = true;
             this.txt_Send.Name = "txt_Send";
@@ -91,6 +92,7 @@
             // 
             // btn_Send
             // 
+            this.btn_Send.Enabled = false;
             this.btn_Send.Location = new System.Drawing.Point(15, 357);
             this.btn_Send.Name = "btn_Send";
             this.btn_Send.Size = new System.Drawing.Size(75, 23);
@@ -194,6 +196,7 @@
             // 
             // btn_Clear
             // 
+            this.btn_Clear.Enabled = false;
             this.btn_Clear.Location = new System.Drawing.Point(224, 357);
             this.btn_Clear.Name = "btn_Clear";
             this.btn_Clear.Size = new System.Drawing.Size(75, 23);
