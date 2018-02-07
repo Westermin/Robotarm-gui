@@ -70,7 +70,7 @@ namespace Robotarm_gui
 
         private void btn_PortSwitch_Click(object sender, EventArgs e)
         {
-            if (toggle == true)
+            if (toggle)
             {
                 try
                 {
