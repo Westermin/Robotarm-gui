@@ -68,6 +68,7 @@
             this.txt_Send.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_Send.Size = new System.Drawing.Size(197, 138);
             this.txt_Send.TabIndex = 0;
+            this.txt_Send.TextChanged += new System.EventHandler(this.txt_Send_TextChanged);
             // 
             // gp_Receive
             // 

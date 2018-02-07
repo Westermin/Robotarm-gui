@@ -44,6 +44,7 @@ namespace Robotarm_gui
 
         private void btn_Send_Click(object sender, EventArgs e)
         {
+            serialPort1.WriteLine(txt_Send.Text);
             txt_Send.Clear();
         }
 
@@ -71,6 +72,8 @@ namespace Robotarm_gui
         {
             if (toggle == true)
             {
+                try
+                {
                     if (cb_Ports.Text == "" || cb_Baudrate.Text == "")
                     {
                         txt_Recieve.Text = "Please select a valid Port and Baudrate.";
@@ -88,10 +91,14 @@ namespace Robotarm_gui
                         txt_Send.Enabled = true;
 
 
-                    toggle = !toggle;
+                        toggle = !toggle;
                     }
-                
-            }
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    txt_Recieve.Text = ("Unauthorized Access Exception");
+                }
+            }   
             else
                 {
                 serialPort1.Close();
@@ -102,6 +109,11 @@ namespace Robotarm_gui
                 txt_Send.Enabled = false;
                 toggle = !toggle;
                 }
+        }
+
+        private void txt_Send_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
