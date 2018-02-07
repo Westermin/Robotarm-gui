@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gp_Send = new System.Windows.Forms.GroupBox();
             this.txt_Send = new System.Windows.Forms.TextBox();
             this.gp_Receive = new System.Windows.Forms.GroupBox();
@@ -43,6 +44,7 @@
             this.btn_Start = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.txt_Status = new System.Windows.Forms.TextBox();
+            this.btn_Clear = new System.Windows.Forms.Button();
             this.gp_Send.SuspendLayout();
             this.gp_Receive.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +64,7 @@
             this.txt_Send.Location = new System.Drawing.Point(3, 16);
             this.txt_Send.Multiline = true;
             this.txt_Send.Name = "txt_Send";
+            this.txt_Send.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_Send.Size = new System.Drawing.Size(197, 138);
             this.txt_Send.TabIndex = 0;
             // 
@@ -80,8 +83,10 @@
             this.txt_Recieve.Location = new System.Drawing.Point(3, 16);
             this.txt_Recieve.Multiline = true;
             this.txt_Recieve.Name = "txt_Recieve";
+            this.txt_Recieve.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_Recieve.Size = new System.Drawing.Size(197, 138);
             this.txt_Recieve.TabIndex = 0;
+            this.txt_Recieve.TextChanged += new System.EventHandler(this.txt_Recieve_TextChanged);
             // 
             // btn_Send
             // 
@@ -95,7 +100,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(355, 149);
+            this.button1.Location = new System.Drawing.Point(286, 149);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 36);
             this.button1.TabIndex = 3;
@@ -110,6 +115,7 @@
             this.cb_Baudrate.Name = "cb_Baudrate";
             this.cb_Baudrate.Size = new System.Drawing.Size(121, 21);
             this.cb_Baudrate.TabIndex = 4;
+            this.cb_Baudrate.SelectedIndexChanged += new System.EventHandler(this.cb_Baudrate_SelectedIndexChanged);
             // 
             // cb_Ports
             // 
@@ -153,7 +159,7 @@
             // btn_Start
             // 
             this.btn_Start.BackColor = System.Drawing.Color.Green;
-            this.btn_Start.Location = new System.Drawing.Point(12, 92);
+            this.btn_Start.Location = new System.Drawing.Point(96, 135);
             this.btn_Start.Name = "btn_Start";
             this.btn_Start.Size = new System.Drawing.Size(78, 37);
             this.btn_Start.TabIndex = 8;
@@ -164,18 +170,29 @@
             // txt_Status
             // 
             this.txt_Status.BackColor = System.Drawing.Color.Gray;
-            this.txt_Status.Location = new System.Drawing.Point(199, 124);
+            this.txt_Status.Location = new System.Drawing.Point(180, 144);
             this.txt_Status.Name = "txt_Status";
             this.txt_Status.ReadOnly = true;
             this.txt_Status.Size = new System.Drawing.Size(100, 20);
             this.txt_Status.TabIndex = 9;
             this.txt_Status.Text = "N/A";
             // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Location = new System.Drawing.Point(224, 357);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_Clear.TabIndex = 10;
+            this.btn_Clear.Text = "Clear Log";
+            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 402);
+            this.Controls.Add(this.btn_Clear);
             this.Controls.Add(this.txt_Status);
             this.Controls.Add(this.btn_Start);
             this.Controls.Add(this.btn_Stop);
@@ -187,6 +204,7 @@
             this.Controls.Add(this.btn_Send);
             this.Controls.Add(this.gp_Receive);
             this.Controls.Add(this.gp_Send);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Robot Arm Control Panel";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -215,6 +233,7 @@
         private System.Windows.Forms.Button btn_Start;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.TextBox txt_Status;
+        private System.Windows.Forms.Button btn_Clear;
     }
 }
 

@@ -26,7 +26,7 @@ namespace Robotarm_gui
 
         private void cb_Ports_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btn_Start_Click(object sender, EventArgs e)
@@ -47,6 +47,21 @@ namespace Robotarm_gui
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_Baudrate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            txt_Recieve.Clear();
+        }
+
+        private void txt_Recieve_TextChanged(object sender, EventArgs e)
         {
 
         }
